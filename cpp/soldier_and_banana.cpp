@@ -9,19 +9,18 @@ The first line contains three positive integers k, n, w (1  ≤  k,�
 Output
 Output one integer — the amount of dollars that the soldier must borrow from his friend. If he doesn't have to borrow money, output 0.
 */
-
-#include<iostream>
-
+#include <iostream>
 using namespace std;
 
-int main(){
-	int k, n, w;
+int main() {
+    long long k, n, w;
+    cin >> k >> n >> w;
 
-	cin >> k >> n >> w;
+    long long total = k * w * (w + 1) / 2;
+    long long borrow = total - n;
 
-	int o = k * w * (w+1) / 2 - n;
+    if (borrow < 0) borrow = 0;
+    cout << borrow;
 
-	cout << o;
-
-	return 0;
+    return 0;
 }
